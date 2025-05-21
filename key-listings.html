@@ -1,30 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Key Listings</title>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background: #f9f9f9;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #666;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Saved Listings - TriKey</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f3f4f6;
+  color: #111;
+}
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.listing {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 850px;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.listing img {
+  width: 200px;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.details {
+  flex-grow: 1;
+}
+.details h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.details p {
+  margin: 0.25rem 0;
+}
+.contact {
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+.contact a {
+  color: #4a4a4a;
+  font-weight: 600;
+  text-decoration: none;
+}
+</style>
 </head>
 <body>
-  <h1>Your Key Listings</h1>
-  <p>You haven't saved any listings yet. Click the gold key icon on a listing to favorite it.</p>
+<h1>Your Key Listings</h1>
+<div id="saved-listings"></div>
+<script src="saved.js"></script>
 </body>
 </html>
