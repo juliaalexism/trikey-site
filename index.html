@@ -10,15 +10,15 @@
     body {
       font-family: 'Helvetica Neue', sans-serif;
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1582837618136-f9b0daed5203?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       padding: 2rem;
+      text-align: center;
     }
     h1 {
       font-size: 3rem;
@@ -48,7 +48,7 @@
     button {
       padding: 0.8rem;
       font-size: 1rem;
-      background-color: #4a4a4a;
+      background-color: #0b5ed7;
       color: white;
       border: none;
       border-radius: 5px;
@@ -56,7 +56,7 @@
       transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #2f2f2f;
+      background-color: #084298;
     }
     @media (min-width: 600px) {
       .search-box {
@@ -68,37 +68,15 @@
         flex: 1 1 220px;
       }
     }
-    header {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-    }
-    header img {
-      width: 24px;
-      height: 24px;
-    }
-    header a {
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1rem;
-    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://img.icons8.com/emoji/48/000000/key-emoji.png" alt="key icon" />
-    <a href="#">Log In</a>
-  </header>
   <h1>Find your next home</h1>
   <p>Real-time listings in the New York tri-state area</p>
   <div class="search-box">
-    <input placeholder="Location">
-    <input placeholder="Min Price">
-    <input placeholder="Max Price">
+    <input type="text" placeholder="Location" />
+    <input type="text" placeholder="Min Price" />
+    <input type="text" placeholder="Max Price" />
     <button onclick="window.location.href='listings.html'">Search</button>
   </div>
 </body>
