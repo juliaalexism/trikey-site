@@ -1,115 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>TriKey Listings</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 2rem;
-  background-color: #f3f4f6;
-  color: #111;
-}
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-.filters button {
-  padding: 0.6rem 1.2rem;
-  background-color: #fafafa;
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: #4a4a4a;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.filters button:hover {
-  background-color: #ececec;
-}
-.listing {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 850px;
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  align-items: flex-start;
-}
-.listing img {
-  width: 200px;
-  height: 140px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-.details {
-  flex-grow: 1;
-}
-.details h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-.details p {
-  margin: 0.25rem 0;
-}
-.contact {
-  background: #f0f0f0;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  display: inline-block;
-  margin-top: 0.5rem;
-}
-.contact a {
-  color: #4a4a4a;
-  font-weight: 600;
-  text-decoration: none;
-}
-.favorite {
-  font-size: 1.8rem;
-  cursor: pointer;
-  user-select: none;
-  color: transparent;
-  text-shadow: 0 0 0 #bbb;
-  transition: text-shadow 0.3s ease;
-}
-.favorite.active {
-  text-shadow: 0 0 0 #4a4a4a;
-}
-
-.favorite {
-  font-size: 1.8rem;
-  cursor: pointer;
-  user-select: none;
-  color: transparent;
-  text-shadow: 0 0 0 #bbb;
-  transition: text-shadow 0.3s ease;
-}
-.favorite.active {
-  text-shadow: 0 0 0 #FFD700; /* yellow when saved */
-}
-
-</style>
+  <meta charset="UTF-8">
+  <title>TriKey Listings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f3f4f6;
+      color: #111;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .filters button {
+      padding: 0.6rem 1.2rem;
+      background-color: #fafafa;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .filters button:hover {
+      background-color: #ececec;
+    }
+    .listing {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 850px;
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .listing img {
+      width: 200px;
+      height: 140px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .details {
+      flex-grow: 1;
+    }
+    .details h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .details p {
+      margin: 0.25rem 0;
+    }
+    .contact {
+      background: #f0f0f0;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .contact a {
+      color: #4a4a4a;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .favorite {
+      font-size: 1.8rem;
+      cursor: pointer;
+      user-select: none;
+      color: transparent;
+      text-shadow: 0 0 0 #bbb;
+      transition: text-shadow 0.3s ease;
+    }
+    .favorite.active {
+      text-shadow: 0 0 0 #FFD700;
+    }
+    .agent {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .agent img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  </style>
 </head>
 <body>
-<h1>Available Listings in Williamsburg</h1>
-<div class="filters">
-  <button>Price</button><button>Beds / Baths</button><button>Pets</button><button>Amenities</button>
-</div>
-<div id="listings"></div>
-<script src="listings.js"></script>
+  <h1>Available Listings in Williamsburg</h1>
+  <div class="filters">
+    <button>Price</button><button>Beds / Baths</button><button>Pets</button><button>Amenities</button>
+  </div>
+
+  <div class="listing">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Greenwich_Village_building_with_fire_escape.jpg" alt="Apartment">
+    <div class="details">
+      <h2>123 Bedford Ave, Brooklyn</h2>
+      <p>$3,200/month</p>
+      <div class="agent"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jenny Smith"><span>Jenny Smith</span></div>
+      <div class="contact">Contact Agent: <a href="mailto:jenny@trikey.com">jenny@trikey.com</a></div>
+    </div>
+    <div class="favorite" onclick="this.classList.toggle('active')">🔑</div>
+  </div>
+
+  <div class="listing">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Ivy_Covered_Building_Greenwich_St_NYC.jpg" alt="Apartment">
+    <div class="details">
+      <h2>200 Kent Ave, Brooklyn</h2>
+      <p>$4,500/month</p>
+      <div class="agent"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marco Diaz"><span>Marco Diaz</span></div>
+      <div class="contact">Contact Agent: <a href="mailto:marco@trikey.com">marco@trikey.com</a></div>
+    </div>
+    <div class="favorite" onclick="this.classList.toggle('active')">🔑</div>
+  </div>
+
+  <div class="listing">
+    <img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=800&q=60" alt="Apartment">
+    <div class="details">
+      <h2>87 North 7th St, Brooklyn</h2>
+      <p>$2,800/month</p>
+      <div class="agent"><img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Lee Chen"><span>Lee Chen</span></div>
+      <div class="contact">Contact Agent: <a href="mailto:lee@trikey.com">lee@trikey.com</a></div>
+    </div>
+    <div class="favorite" onclick="this.classList.toggle('active')">🔑</div>
+  </div>
+
+  <div class="listing">
+    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348229?auto=format&fit=crop&w=800&q=60" alt="Apartment">
+    <div class="details">
+      <h2>45 South 4th St, Brooklyn</h2>
+      <p>$5,400/month</p>
+      <div class="agent"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sara Gold"><span>Sara Gold</span></div>
+      <div class="contact">Contact Agent: <a href="mailto:sara@trikey.com">sara@trikey.com</a></div>
+    </div>
+    <div class="favorite" onclick="this.classList.toggle('active')">🔑</div>
+  </div>
+
+  <div class="listing">
+    <img src="https://images.unsplash.com/photo-1520963942033-6e928109d2c5?auto=format&fit=crop&w=800&q=60" alt="Apartment">
+    <div class="details">
+      <h2>302 Wythe Ave, Brooklyn</h2>
+      <p>$3,000/month</p>
+      <div class="agent"><img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Dana Royce"><span>Dana Royce</span></div>
+      <div class="contact">Contact Agent: <a href="mailto:dana@trikey.com">dana@trikey.com</a></div>
+    </div>
+    <div class="favorite" onclick="this.classList.toggle('active')">🔑</div>
+  </div>
 </body>
 </html>
