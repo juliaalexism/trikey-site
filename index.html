@@ -2,26 +2,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>TriKey - Williamsburg Rentals</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 2rem; }
-        h1 { color: green; }
-        .listing { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; }
-        .contact { background: #f4f4f4; padding: 0.5rem; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TriKey</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .search-box {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    input, select {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      min-width: 180px;
+    }
+    button {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      background-color: #0b5ed7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #084298;
+    }
+  </style>
 </head>
 <body>
-    <h1>TriKey: Williamsburg Listings</h1>
-    <div class="listing">
-        <h2>123 Bedford Ave, Brooklyn</h2>
-        <p>1 Bed · $3,200/month</p>
-        <div class="contact">Contact Agent: <a href="mailto:jenny@trikey.com">jenny@trikey.com</a></div>
-    </div>
-    <div class="listing">
-        <h2>56 Grand St, Brooklyn</h2>
-        <p>2 Bed · $4,000/month</p>
-        <div class="contact">Contact Agent: <a href="mailto:marco@trikey.com">marco@trikey.com</a></div>
-    </div>
+  <h1>Find your next home</h1>
+  <p>Browse real-time listings in the New York tri-state area</p>
+  <div class="search-box">
+    <input type="text" placeholder="Location" />
+    <input type="text" placeholder="Min Price" />
+    <input type="text" placeholder="Max Price" />
+    <button onclick="window.location.href='https://trikey-site-fy1r.vercel.app'">Search</button>
+  </div>
 </body>
 </html>
