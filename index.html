@@ -6,60 +6,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TriKey</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      color: white;
       height: 100vh;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 2rem;
       text-align: center;
     }
     h1 {
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
     p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
     .search-box {
       display: flex;
+      flex-direction: column;
       gap: 1rem;
-      flex-wrap: wrap;
+      width: 100%;
+      max-width: 500px;
     }
-    input, select {
-      padding: 0.75rem 1rem;
+    input {
+      padding: 0.8rem 1rem;
       font-size: 1rem;
       border: none;
       border-radius: 5px;
-      min-width: 180px;
+      width: 100%;
     }
     button {
-      padding: 0.75rem 2rem;
+      padding: 0.8rem;
       font-size: 1rem;
       background-color: #0b5ed7;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #084298;
+    }
+    @media (min-width: 600px) {
+      .search-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      input {
+        flex: 1 1 150px;
+      }
     }
   </style>
 </head>
 <body>
   <h1>Find your next home</h1>
-  <p>Browse real-time listings in the New York tri-state area</p>
+  <p>Real-time listings in the New York tri-state area</p>
   <div class="search-box">
     <input type="text" placeholder="Location" />
     <input type="text" placeholder="Min Price" />
     <input type="text" placeholder="Max Price" />
-    <button onclick="window.location.href='https://trikey-site-fy1r.vercel.app'">Search</button>
+    <button onclick="window.location.href='listings.html'">Search</button>
   </div>
 </body>
 </html>
